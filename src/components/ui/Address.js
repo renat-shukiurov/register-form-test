@@ -5,18 +5,21 @@ import {debounce} from "../../utils";
 import {clearAddress, getAddress} from "../../redux/actions/AddressActions";
 import {useDispatch, useSelector} from "react-redux";
 import {useFormContext} from "react-hook-form";
+import {useLocation} from "../hooks/useLocation";
 
 const Address = () => {
-    const { setValue } = useFormContext();
+    const location = useLocation();
 
+    const { setValue } = useFormContext();
     const {data, loading} = useSelector(state => state.address);
     const dispatch = useDispatch();
+
 
     const handleAddressChange = e => {
         const value = e.target.value;
 
         if (value.length) {
-            const params = {q: value, at: '50.330479,30.290205'};
+            const params = {q: value, at: `${location.latitude},${location.longitude}`};
             dispatch(getAddress(params));
         }
         else{
@@ -36,7 +39,7 @@ const Address = () => {
                 name="address"
                 type="text"
                 params={{required: "The field is required"}}
-                onChange={debounce(handleAddressChange, 2000)}
+                onChange={debounce(handleAddressChange, 1000)}
             />
 
             {data.length
