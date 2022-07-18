@@ -9,12 +9,12 @@ import {addUser} from "../../redux/actions/UserActions";
 import Address from "../ui/Address";
 
 const Form = () => {
-    // const { register, handleSubmit, formState: { errors } } = useForm();
     const methods = useForm();
 
     const dispatch = useDispatch()
     const onSubmit = data => {
         dispatch(addUser(data));
+        methods.reset();
     };
 
     return (
@@ -64,7 +64,7 @@ const Form = () => {
 
                 <Input
                     content="I Agree to Privacy Policy"
-                    name="checkbox"
+                    name="policy"
                     type="checkbox"
                     params={{required: "The field is required"}}
 

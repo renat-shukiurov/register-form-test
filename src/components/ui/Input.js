@@ -7,7 +7,6 @@ const Input = ({title, name, params, content, ...rest}) => {
 
     const { register, formState: { errors } } = useFormContext();
 
-    console.log(errors);
     return (
         <Field>
             <label>{title && <p>{title}</p>}

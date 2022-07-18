@@ -1,8 +1,9 @@
 import React from 'react';
+import {ButtonWrapper} from "./Ui.style";
 
 const Button = () => {
     return (
-        <button type="submit">Register</button>
+        <ButtonWrapper type="submit">Register</ButtonWrapper>
     );
 };
 

@@ -65,3 +65,21 @@ export const AutocompleteItem = styled.div`
     border-bottom: 1px solid #d4d4d4;
     font-size: 12px;
 `;
+
+export const ButtonWrapper = styled.button`
+    width: 200px;
+    margin: 0 auto;
+    background: #1f8dd2;
+    border: 2px solid #1f8dd2;
+    padding: 10px 0;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  
+  :hover {
+    background: #ffffff;
+    color: #1f8dd2;
+  }
+`;
