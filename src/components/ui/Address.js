@@ -38,8 +38,11 @@ const Address = () => {
                 title="Address"
                 name="address"
                 type="text"
-                params={{required: "The field is required"}}
-                onChange={debounce(handleAddressChange, 1000)}
+                params={{
+                    required: "The field is required",
+                    onChange: debounce(handleAddressChange, 1000)
+                    }
+                }
             />
 
             {data.length
