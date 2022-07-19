@@ -29,6 +29,7 @@ const Form = () => {
                     title="Name"
                     name="name"
                     type="text"
+                    placeholder="Bart"
                     params={{required: "The field is required"}}
                 />
 
@@ -36,6 +37,7 @@ const Form = () => {
                     title="Surname"
                     name="surname"
                     type="text"
+                    placeholder="Simson"
                     params={{required: "The field is required"}}
                 />
 
@@ -43,15 +45,17 @@ const Form = () => {
                     title="Phone number"
                     name="phone"
                     type="text"
+                    placeholder="12025550157"
                     params={{
                         required: "The field is required",
                         pattern: {
                             value: /^[0-9]+$/,
                             message: 'Only numbers'
                         },
+                        onChange: (e) => {methods.setValue('phone', e.target.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1'))},
                         maxLength : {
-                            value: 12,
-                            message: 'Maximum length 12 digits'
+                            value: 15,
+                            message: 'Maximum length 15 digits'
                         },
                     }}
                 />
@@ -60,6 +64,7 @@ const Form = () => {
                     title="Email"
                     name="email"
                     type="text"
+                    placeholder="example@gmail.com"
                     params={{
                         required: "The field is required",
                         pattern: {

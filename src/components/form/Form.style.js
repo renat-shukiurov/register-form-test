@@ -4,7 +4,7 @@ export const WrapperForm = styled.form`
   width: 350px;
   padding: 20px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.25);
-  margin: 20px auto;
+  margin: 20px auto 50px;
   display: flex;
   flex-direction: column;
   border: 2px solid #1f8dd2;

@@ -38,6 +38,7 @@ const Address = () => {
                 title="Address"
                 name="address"
                 type="text"
+                placeholder="New York"
                 params={{
                     required: "The field is required",
                     onChange: debounce(handleAddressChange, 1000)
